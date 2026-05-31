@@ -3,7 +3,7 @@ import { AuthProvider } from './context/AuthContext'
 
 import Navbar from './components/Navbar'
 import ProtectedRoute from './components/ProtectedRoute'
-import footer from './components/footer'
+import Footer from './components/footer'
 
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -178,7 +178,7 @@ const App = () => {
 
           </main>
 
-          <footer />
+        <Footer />
         </div>
 
       </BrowserRouter>
