@@ -232,8 +232,6 @@ const Profile = () => {
       const data = await res.json()
       if (!res.ok) { setProfileError(data.message); return }
       updateUser(data.user)
-      setPhotoPreview(data.user.photo)  // ← update with cloudinary URL
-      setPhoto(null)                     // ← clear local file
       setProfileSuccess('Profile updated successfully!')
     } catch (err) {
       setProfileError('Something went wrong')
@@ -374,45 +372,15 @@ const Profile = () => {
                 <form onSubmit={handleProfileUpdate} className="space-y-4">
 
                   {/* Photo upload */}
-                 <div>
-  <label className="text-sm text-gray-600 font-medium">Profile Photo</label>
-  <div className="flex items-center gap-4 mt-2">
-    <div className="w-16 h-16 rounded-full overflow-hidden bg-pink-100 border-2 border-pink-200 flex-shrink-0 flex items-center justify-center">
-      {photoPreview ? (
-        <img src={photoPreview} alt="profile" className="w-full h-full object-cover" />
-      ) : (
-        <span className="text-pink-500 text-2xl font-bold">
-          {user?.name?.[0]?.toUpperCase()}
-        </span>
-      )}
-    </div>
-    <div className="flex-1">
-      <label
-        htmlFor="photo-upload"
-        className="cursor-pointer inline-flex items-center gap-2 bg-pink-50 border border-pink-200 text-pink-500 text-sm font-medium px-4 py-2 rounded-xl hover:bg-pink-100 transition"
-      >
-        📷 {photoPreview ? 'Change Photo' : 'Upload Photo'}
-      </label>
-      <input
-        id="photo-upload"
-        type="file"
-        accept="image/*"
-        onChange={handlePhotoChange}
-        className="hidden"
-      />
-      {photo && (
-        <p className="text-xs text-gray-400 mt-1">
-          ✅ {photo.name} — click Save Changes to upload
-        </p>
-      )}
-      {!photo && user?.photo && (
-        <p className="text-xs text-gray-400 mt-1">
-          Photo saved to cloud ☁️
-        </p>
-      )}
-    </div>
-  </div>
-</div>
+                  <div>
+                    <label className="text-sm text-gray-600 font-medium">Profile Photo</label>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handlePhotoChange}
+                      className="w-full border border-gray-200 rounded-xl px-4 py-2 mt-1 text-sm focus:outline-none"
+                    />
+                  </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
