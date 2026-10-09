@@ -205,18 +205,18 @@ const Home = () => {
 
           {/* Right — illustration box */}
           <div ref={heroRight.ref} style={heroRight.style} className={`hidden lg:flex items-center justify-center ${heroRight.className}`}>
-            <div
-              className="rounded-full overflow-hidden"
-              style={{ width: '340px', height: '340px', backgroundColor: '#FFD6E7' }}
-            >
-              <img
-                src="https://res.cloudinary.com/dvetp8lrg/image/upload/image_2b41562d_j0qnsl"
-                alt="Bloom girls"
-                className="w-full h-full object-cover object-top"
-                onError={(e) => { e.target.style.display = 'none' }}
-              />
-            </div>
-          </div>
+  <div
+    className="rounded-full overflow-hidden"
+    style={{ width: '340px', height: '340px', backgroundColor: '#FFD6E7' }}
+  >
+    <img
+      src="https://res.cloudinary.com/dvetp8lrg/image/upload/image_2b41562d_j0qnsl"
+      alt="Bloom girls"
+      className="w-full h-full object-cover object-center scale-110 transition-transform duration-300"
+      onError={(e) => { e.target.style.display = 'none' }}
+    />
+  </div>
+</div>
 
         </div>
       </div>
