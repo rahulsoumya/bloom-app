@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import ProductCard from '../components/ProductCard'
 import API_URL from '../config'
+import { ProductCardSkeleton } from '../components/Skeleton'
 
 const categories = ['all', 'pads', 'tampons', 'cups', 'skincare', 'hygiene', 'wellness']
 
