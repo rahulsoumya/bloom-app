@@ -27,3 +27,13 @@
 .backdrop-animate {
   animation: backdropFade 0.25s ease forwards;
 }
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@shimmer {
+  background: linear-gradient(90deg, #f3f4f6 25%, #fce7f3 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
