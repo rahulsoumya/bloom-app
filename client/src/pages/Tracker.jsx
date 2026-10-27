@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext'
 import CycleCalendar from '../components/CycleCalendar'
 import LogForm from '../components/LogForm'
 import API_URL from '../config'
+import { TrackerSkeleton } from '../components/Skeleton'
 
 const Tracker = () => {
   const { token } = useAuth()
@@ -79,9 +80,7 @@ const Tracker = () => {
 
   const daysUntil = getDaysUntil()
 
-  if (loading) return (
-    <p className="text-center mt-20 text-gray-400">Loading tracker...</p>
-  )
+  if (loading) return <TrackerSkeleton />
 
   return (
     <div className="min-h-screen bg-pink-50 py-8 px-4">
